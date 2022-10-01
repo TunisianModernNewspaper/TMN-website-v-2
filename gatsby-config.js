@@ -124,9 +124,9 @@ module.exports = {
         custom: [
           {
             /* Exact name of the font as defied in @font-face CSS rule */
-            name: ['Licorice'],
+            name: ['Montserrat'],
             /* Path to the font CSS file inside the "static" folder with @font-face definition */
-            file: '/fonts/Licorice-Regular.ttf',
+            file: 'src/shared/styles/typography.scss',
           },
         ],
 
