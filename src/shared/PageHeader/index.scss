@@ -1,5 +1,26 @@
 @import '../../shared/styles/variables';
 
 .page-header {
-  background-color: $primary-color;
+  background-color: black;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100% !important;
+  padding: 0 2rem;
+  &-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    &-link {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition-duration: 0.3s;
+      &:hover {
+        color: #f4d683;
+      }
+    }
+  }
 }

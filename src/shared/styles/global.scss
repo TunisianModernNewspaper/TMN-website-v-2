@@ -4,7 +4,9 @@
 -------------------------------------------------------------------------- */
 
 @import './variables';
-@import './typography.scss';
+
+html,
+body,
 h1,
 h2,
 h3,
@@ -17,9 +19,10 @@ button,
 label,
 a,
 li,
-span {
+span,
+li {
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: $ff-primary;
 }
 
 button,
