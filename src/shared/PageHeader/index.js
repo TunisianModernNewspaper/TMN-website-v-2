@@ -4,9 +4,11 @@
 
 // Packages
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useI18next, Link, useTranslation } from 'gatsby-plugin-react-i18next';
-
+// import PropTypes from 'prop-types';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { Link } from 'gatsby';
+// UI component
+import Image from '../Image/index';
 // Style
 import './index.scss';
 
@@ -14,46 +16,51 @@ import './index.scss';
 /*                                  Component                                 */
 /* -------------------------------------------------------------------------- */
 
-function PageHeader({ siteTitle }) {
+function PageHeader() {
   /* ********************************** HOOKS ********************************* */
 
   // Localization
-  const { languages, originalPath } = useI18next();
   const { t } = useTranslation();
+  const {
+    header: { links },
+  } = t('layout', { returnObjects: true });
+
+  /* ***************************** RENDER HELPERS ***************************** */
+  const headerLinks = links.map(({ id, link }) => (
+    <Link to="/" className="page-header-links-container-link" key={id}>
+      {link}
+    </Link>
+  ));
 
   /* ******************************** RENDERING ******************************* */
   return (
     <header className="page-header">
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
+      <div className="Logo-container">
+        <Image src="tmn-logo" alt="Tunisan-Modern-NewsPaper" />
+      </div>
+      <div className="page-header-links-container">
+        <div className="input-search-container">
+          <input type="text" placeholder="Looking for something ? " />
+        </div>
+        {headerLinks}
+      </div>
+      <div className="page-header-auth-section">
+        <Link to="/" className="page-header-auth-section-link">
+          <div className="insta-logo-container">
+            <Image src="insta-logo.png" alt="" />
+          </div>
+          Login
         </Link>
-      </h1>
-      <ul className="languages">
-        {languages.map((lng) => (
-          <li key={lng}>
-            <Link to={originalPath} language={lng}>
-              {t(`layout.header.${lng}`)}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <Link to="/" className="page-header-auth-section-link">
+          Subscribe
+        </Link>
+      </div>
     </header>
   );
 }
 
-PageHeader.propTypes = {
-  siteTitle: PropTypes.string,
-};
+PageHeader.propTypes = {};
 
-PageHeader.defaultProps = {
-  siteTitle: '',
-};
+PageHeader.defaultProps = {};
 
 export default PageHeader;

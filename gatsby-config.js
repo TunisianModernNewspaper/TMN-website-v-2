@@ -121,14 +121,14 @@ module.exports = {
         // @TODO: Uncomment for web and Google Fonts preconnect: ['https://fonts.gstatic.com'],
 
         /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
-        custom: [
-          {
-            /* Exact name of the font as defied in @font-face CSS rule */
-            name: ['Montserrat'],
-            /* Path to the font CSS file inside the "static" folder with @font-face definition */
-            file: 'src/shared/styles/typography.scss',
-          },
-        ],
+        // custom: [
+        //   {
+        //     /* Exact name of the font as defied in @font-face CSS rule */
+        //     name: ['Montserrat'],
+        //     /* Path to the font CSS file inside the "static" folder with @font-face definition */
+        //     file: 'src/shared/styles/typography.scss',
+        //   },
+        // ],
 
         /* Web fonts. File link should point to font CSS file. */
         // @TODO: Un comment for web and google fonts
