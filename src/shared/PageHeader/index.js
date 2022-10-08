@@ -38,13 +38,22 @@ function PageHeader() {
       <div className="Logo-container">
         <Image src="tmn-logo" alt="Tunisan-Modern-NewsPaper" />
       </div>
-      <div className="input-search-container">
-        <input type="text" />
+      <div className="page-header-links-container">
+        <div className="input-search-container">
+          <input type="text" placeholder="Looking for something ? " />
+        </div>
+        {headerLinks}
       </div>
-      <div className="page-header-links-container">{headerLinks}</div>
       <div className="page-header-auth-section">
-        <Link to="/">Login</Link>
-        <Link to="/">Subscribe</Link>
+        <Link to="/" className="page-header-auth-section-link">
+          <div className="insta-logo-container">
+            <Image src="insta-logo.png" alt="" />
+          </div>
+          Login
+        </Link>
+        <Link to="/" className="page-header-auth-section-link">
+          Subscribe
+        </Link>
       </div>
     </header>
   );
